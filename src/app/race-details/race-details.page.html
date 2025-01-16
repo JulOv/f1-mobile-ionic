@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <nav>
+        <a [routerLink] ="['/races']"
+           routerDirection="forward">
+          <p>Back</p>
+        </a>
+      </nav>
+    </ion-buttons>
+    <ion-title>Race Results</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="addResult()">+</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let result of results">
+      <ion-label>
+        <h2>
+          {{ result.position }}. {{ result.first_name }} {{ result.last_name }} {{ result.fastest_lap ? '🏎️💨' : '' }}
+        </h2>
+        <p>{{ result.team_name }}</p>
+        <p [ngClass]="{'fastest-lap': result.fastest_lap}"></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

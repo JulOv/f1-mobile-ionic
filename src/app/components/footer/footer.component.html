@@ -1,0 +1,25 @@
+<ion-footer>
+  <ion-toolbar class="footer-toolbar">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <nav>
+            <a [routerLink]="['/home']" routerDirection="forward">
+              <ion-icon name="trophy-outline"></ion-icon>
+              <p>Standings</p>
+            </a>
+          </nav>
+        </ion-col>
+        <ion-col>
+          <nav>
+            <a [routerLink] ="['/races']"
+              routerDirection="forward">
+              <ion-icon name="flag-outline"></ion-icon>
+              <p>Races</p>
+            </a>
+          </nav>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

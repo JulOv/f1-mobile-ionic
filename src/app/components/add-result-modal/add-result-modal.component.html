@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Result</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item>
+    <ion-select interface="popover" placeholder="Select driver" [(ngModel)]="result.tag_name">
+      <ion-select-option  *ngFor="let driver of drivers" [value]="driver.tag_name">
+        {{ driver.tag_name }} - {{ driver.first_name }} {{ driver.last_name }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+<!--<ion-content>-->
+<!--  <ion-item>-->
+<!--    <ion-label>Driver</ion-label>-->
+<!--    <ion-select aria-label="Fruit" interface="action-sheet" [(ngModel)]="result.tag_name">-->
+<!--      <ion-select-option  *ngFor="let driver of drivers" [value]="driver.tag_name">-->
+<!--        {{ driver.tag_name }} - {{ driver.first_name }} {{ driver.last_name }}-->
+<!--      </ion-select-option>-->
+<!--    </ion-select>-->
+<!--  </ion-item>-->
+
+  <ion-item>
+<!--    <ion-label>Position</ion-label>-->
+    <ion-select interface="popover" placeholder="Select position" [(ngModel)]="result.position">
+      <ion-select-option *ngFor="let number of [].constructor(20); let i = index" [value]="i + 1">
+        {{ i + 1 }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-checkbox [(ngModel)]="result.fastest_lap">Fastest Lap</ion-checkbox>
+  </ion-item>
+
+  <ion-footer>
+    <ion-button expand="full" (click)="add()">Add</ion-button>
+  </ion-footer>
+</ion-content>
